@@ -205,9 +205,7 @@ class VapGPT(nn.Module):
         p_now = self.objective.probs_next_speaker_aggregate(
             probs, from_bin=now_lims[0], to_bin=now_lims[-1]
         )
-        p_future = self.objective.probs_next_speaker_aggregate(
-            probs, from_bin=future_lims[0], to_bin=future_lims[1]
-        )
+        p_future = []
 
         ret = {
             "probs": probs,
